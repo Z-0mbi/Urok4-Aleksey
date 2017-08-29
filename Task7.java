@@ -9,35 +9,42 @@ import java.util.Scanner;
 public class Task7 {
 
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		String sentence = sc.nextLine();
+		//Вводим слово
+		//Scanner sc = new Scanner(System.in);
+		//String sentence = sc.nextLine();		
+		String sentence = "we wer rew";
+		sentence.trim();
 		
+		//Вычисляем кол-во слов
 		int oldLength = sentence.length();
-		String newSent = sentence.replace("" + sentence.charAt(sentence.length() - 1), "");
+		String newSent = sentence.replace(" ", "");
 		int newLength = newSent.length();
-		int delta = oldLength - newLength + 1;
+		int amountWords = oldLength - newLength + 1;
 		
-		int beginIndex = 0;
-		int endIndex = 0;
-		String[] mas = new String[delta];
-		int j = 0;
+		//Делаем массив char
+		char[] mas = sentence.toCharArray();
 		char a = 0x0020;
-		for (int i=0; i < sentence.length(); i++) {
-			if (sentence.charAt(i) == a) {
-				endIndex = i;
-				mas[j] = sentence.substring(beginIndex, endIndex);
-				beginIndex = i + 1;
-				j++;
-			}
-			else if(i == sentence.length() - 1 ) {
-				mas[j] = sentence.substring(beginIndex, sentence.length() - 1);
-			}
-		}
+		int nam = mas.length;
 		
 		for (int i = mas.length - 1; i >= 0; i--) {
-			System.out.print(mas[i]);
+			if (mas[i] == a) {				
+				for (int j = i+1; j < nam; j++) {
+					System.out.print(mas[j]);
+				}
+				nam = i;
+				System.out.print(" ");
+			}
+			else if (i == 0) {				
+				for (int j = i; j < nam; j++) {
+					System.out.print(mas[j]);
+				}
+			}
 		}
-
+		
+		
+		
+		
+		
+		
 	}
-
 }
