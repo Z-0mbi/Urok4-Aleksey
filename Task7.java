@@ -5,14 +5,14 @@ import java.util.Scanner;
  *и на выходе получаем строку в обратной последовательности.
  */
 
-// НЕ РЕШИЛ
+
 public class Task7 {
 
 	public static void main(String[] args) {
 		//Вводим слово
-		//Scanner sc = new Scanner(System.in);
-		//String sentence = sc.nextLine();		
-		String sentence = "we wer rew";
+		Scanner sc = new Scanner(System.in);
+		String sentence = sc.nextLine();		
+		//String sentence = "we wer rew";
 		sentence.trim();
 		
 		//Вычисляем кол-во слов
